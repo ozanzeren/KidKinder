@@ -1,16 +1,11 @@
 ﻿
 @{
-    Layout = null;
+    
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/_Layout.cshtml"; 
+
 }
-<!DOCTYPE html>
-<html lang="en">
-@Html.Action("PartialHead", "Default")
-
-<body>
-
-    @Html.Action("PartialNavbar", "Default")
-
-    <!-- Header Start -->
+<!-- Header Start -->
     @Html.Action("ContactHeaderPartial", "Contact")
     <!-- Header End -->
     <!-- Contact Start -->
@@ -77,10 +72,3 @@
             </div>
         </div>
     </div>
-    <!-- Contact End -->
-
-    @Html.Action("PartialFooter", "Default")
-
-    @Html.Action("PartialScript", "Default")
-</body>
-</html>

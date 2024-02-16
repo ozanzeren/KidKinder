@@ -15,15 +15,6 @@ KidKinderContext context = new KidKinderContext();
         {
             return View();
         }
-
-        public PartialViewResult PartialHead() 
-        {
-            return PartialView();
-        }
-        public PartialViewResult PartialNavbar()
-        {
-            return PartialView();
-        }
         public PartialViewResult PartialFeature()
         {
             var values = context.Features.ToList();
@@ -36,7 +27,13 @@ KidKinderContext context = new KidKinderContext();
         }
         public PartialViewResult PartialAbout()
         {
-            return PartialView();
+            var values = context.Abouts.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialAboutList()
+        {
+            var values = context.AboutLists.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialClassRooms()
         {
@@ -50,20 +47,21 @@ KidKinderContext context = new KidKinderContext();
         //Empty
         public PartialViewResult PartialTeacher()
         {
-            return PartialView();
+
+            var values = context.Teachers.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialTestimonial()
         {
-            return PartialView();
+            var values =context.Testimonials.ToList();
+            return PartialView(values);
         }
-        public PartialViewResult PartialFooter()
+        public PartialViewResult PartialAddress()
         {
-            return PartialView();
+            var values = context.Addresses.ToList();
+            return PartialView(values);
         }
-        public PartialViewResult PartialScript()
-        {
-            return PartialView();
-        }
+ 
 
 
     }
