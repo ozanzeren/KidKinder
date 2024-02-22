@@ -131,15 +131,19 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\BookASeat.cs" />
+    <Compile Include="Entities\Branch.cs" />
     <Compile Include="Entities\ClassRoom.cs" />
     <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Contact.cs" />
@@ -164,8 +168,21 @@
     <Compile Include="Migrations\202402160946011_mig3.designer.cs">
       <DependentUpon>202402160946011_mig3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402221057407_mig4.cs" />
+    <Compile Include="Migrations\202402221057407_mig4.designer.cs">
+      <DependentUpon>202402221057407_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221105199_mig5.cs" />
+    <Compile Include="Migrations\202402221105199_mig5.designer.cs">
+      <DependentUpon>202402221105199_mig5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221113253_mig6.cs" />
+    <Compile Include="Migrations\202402221113253_mig6.designer.cs">
+      <DependentUpon>202402221113253_mig6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
+    <Compile Include="Models\TeacherViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +205,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\teacher1.jpg" />
+    <Content Include="images\teacher2.jpg" />
+    <Content Include="images\teacher3.jpg" />
+    <Content Include="images\teacher4.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -205,6 +226,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\colorlib-error-404-10\css\style.css" />
+    <Content Include="Templates\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="Templates\colorlib-error-404-10\index.html" />
+    <Content Include="Templates\colorlib-error-404-10\readme.txt" />
     <Content Include="Templates\kidkinder-1.0.0\about.html" />
     <Content Include="Templates\kidkinder-1.0.0\blog.html" />
     <Content Include="Templates\kidkinder-1.0.0\class.html" />
@@ -660,6 +685,12 @@
     <Content Include="Views\AdminLayout\PartialSidebar.cshtml" />
     <Content Include="Views\AdminLayout\PartialScript.cshtml" />
     <Content Include="Views\Teacher\TeacherList.cshtml" />
+    <Content Include="Views\Teacher\CreateTeacher.cshtml" />
+    <Content Include="Views\AdminLayout\PartialHeader.cshtml" />
+    <Content Include="Views\Teacher\UpdateTeacher.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -701,6 +732,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402160946011_mig3.resx">
       <DependentUpon>202402160946011_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221057407_mig4.resx">
+      <DependentUpon>202402221057407_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221105199_mig5.resx">
+      <DependentUpon>202402221105199_mig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221113253_mig6.resx">
+      <DependentUpon>202402221113253_mig6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
