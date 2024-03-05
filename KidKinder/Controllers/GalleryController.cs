@@ -12,7 +12,8 @@ namespace KidKinder.Controllers
         KidKinderContext context = new KidKinderContext();
         public ActionResult Index()
         {
-            return View();
+            var values = context.Galleries.ToList();
+            return View(values);
         }
         public PartialViewResult GalleryHeaderPartial()
         {
