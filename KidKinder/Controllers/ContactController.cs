@@ -1,4 +1,4 @@
-﻿using KidKinder.Context;
+﻿using KidKinder.context;
 using System;
 using System.Collections.Generic;
 using System.Linq;

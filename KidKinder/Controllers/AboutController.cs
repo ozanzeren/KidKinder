@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using KidKinder.Context;
+using KidKinder.context;
 
 namespace KidKinder.Controllers
 {
@@ -12,7 +12,12 @@ namespace KidKinder.Controllers
         KidKinderContext context = new KidKinderContext();
         public ActionResult Index()
         {
-            return View();
+            var values = context.Abouts.ToList();
+            return View(values);
+        }
+        public PartialViewResult AboutHeaderPartial()
+        {
+            return PartialView();
         }
     }
 }

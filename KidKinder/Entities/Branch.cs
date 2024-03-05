@@ -11,5 +11,7 @@ namespace KidKinder.Entities
         public string Name { get; set; }
 
         public List<Teacher> Teachers { get; set; }
+        public List<ClassRoom> ClassRooms { get; set; }
+       
     }
 }

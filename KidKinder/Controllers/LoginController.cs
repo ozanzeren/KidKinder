@@ -1,4 +1,4 @@
-﻿using KidKinder.Context;
+﻿using KidKinder.context;
 using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
@@ -26,9 +26,18 @@ namespace KidKinder.Controllers
             {
                 FormsAuthentication.SetAuthCookie(admin.Username, true);
                 Session["username"] = result.Username;
-                return RedirectToAction("TeacherList", "Teacher");
+                return RedirectToAction("Index", "Dashboard");
             }
             return View();
+        }
+        public PartialViewResult LoginHeaderPartial()
+        {
+            return PartialView();
+        }
+
+        public ActionResult LoginScriptPartial() 
+        {
+            return PartialView();
         }
     }
 }

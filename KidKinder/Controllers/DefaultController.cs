@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KidKinder.Entities;
-using KidKinder.Context;
+using KidKinder.context;
 
 namespace KidKinder.Controllers
 {
@@ -61,8 +61,5 @@ KidKinderContext context = new KidKinderContext();
             var values = context.Addresses.ToList();
             return PartialView(values);
         }
- 
-
-
     }
 }

@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using KidKinder.Context;
+using KidKinder.context;
 using KidKinder.Entities;
 
 namespace KidKinder.Controllers
 {
-    [Authorize]
+  [Authorize]
     public class TeacherController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -21,13 +21,14 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateTeacher() 
         {
-            List<SelectListItem> values=(from x in context.Branches.ToList() select new SelectListItem
-            {
-                Text=x.Name,
-                Value=x.BranchId.ToString()
-            }).ToList();
+            List<SelectListItem> values = (from x in context.Branches.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.BranchId.ToString()
+                                           }).ToList();
             ViewBag.v = values;
-           return View();
+            return View();
         }
         [HttpPost]
         public ActionResult CreateTeacher(Teacher teacher)
