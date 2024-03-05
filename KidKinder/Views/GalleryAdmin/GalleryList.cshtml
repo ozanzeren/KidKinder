@@ -25,36 +25,61 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card-block table-border-style">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Görsel</th>
-                                        <th>Başlık</th>
-                                        <th>Durum</th>
-                                        <th>Sil</th>
-                                        <th>Güncelle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
+                             <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td>@item.GalleryId</td>
-                                            <td>@item.ImageUrl</td>
-                                            <td>@item.Title</td>                                                                                       
-                                            <td><a href="/Gallery/DeleteImage/@item.GalleryId" class="btn btn-danger">Sil</a></td>
-                                            <td><a href="/Gallery/UpdateImage/@item.GalleryId" class="btn btn-success">Güncelle</a></td>
+                                            <th>#</th>
+                                            <th>Görsel</th>
+                                            <th>Başlık</th>
+                                            <th>Durum</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                            <th>Durum Güncelle</th>
                                         </tr>
-                                    }
-                                </tbody>
-                            </table>
-                            <a href="/Gallery/AddImage/" class="btn btn-primary">Yeni Görsel Ekle</a>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.GalleryId</td>
+                                                <td>@item.ImageUrl</td>
+                                                <td>@item.Title</td>
+                                                <td>
+                                                    @if (item.Status)
+                                                    {
+                                                        <span class="badge badge-success">Aktif</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge badge-danger">Pasif</span>
+                                                    }
+                                                </td>
+                                                <td><a href="/Gallery/DeleteImage/@item.GalleryId" class="btn btn-danger">Sil</a></td>
+                                                <td><a href="/Gallery/UpdateImage/@item.GalleryId" class="btn btn-success">Güncelle</a></td>
+                                                <td>
+                                                    <form method="post" action="/Gallery/ChangeStatus/@item.GalleryId">
+                                                        <button type="submit" class="btn btn-warning">
+                                                            @if (item.Status)
+                                                            {
+                                                                <span>Pasif Yap</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>Aktif Yap</span>
+                                                            }
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <a href="/Gallery/AddImage/" class="btn btn-primary">Yeni Görsel Ekle</a>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

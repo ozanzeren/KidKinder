@@ -12,8 +12,11 @@ namespace KidKinder.Controllers
     {
         KidKinderContext context = new KidKinderContext();
         public ActionResult GalleryList()
-        {   
-            var values = context.Galleries.ToList();
+        {
+            var values = context.Galleries
+                .Where(g => g.Status)
+                .Take(6)               
+                .ToList();
             return View(values);
         }
         [HttpGet]
@@ -24,7 +27,16 @@ namespace KidKinder.Controllers
         [HttpPost]
         public ActionResult AddImage(Gallery p)
         {
+            p.Status = true;
             context.Galleries.Add(p);
+            context.SaveChanges();
+            return RedirectToAction("GalleryList");
+        }
+        [HttpPost]
+        public ActionResult ChangeStatus(int id)
+        {
+            var gallery = context.Galleries.Find(id);
+            gallery.Status = !gallery.Status;
             context.SaveChanges();
             return RedirectToAction("GalleryList");
         }
